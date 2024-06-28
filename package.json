@@ -1,0 +1,19 @@
+{
+  "name": "magical-arena-game",
+  "version": "1.0.0",
+  "description": "This is an magical arena game based on node.js and this aims to create a game that lets two players fight and decide the winner, each player with three attributes- 'strength', 'health' and 'attack'. Also this module contains tests to check the functionality and correctness of code.",
+  "main": "src/game.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test/player.test.js"
+  },
+  "keywords": [
+    "Magical",
+    "arena",
+    "game"
+  ],
+  "author": "Manas Patidar",
+  "license": "ISC"
+}

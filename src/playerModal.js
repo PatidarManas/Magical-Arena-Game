@@ -1,7 +1,8 @@
 class Player {
 
-    constructor(health,strength,attack) { 
+    constructor(name,health,strength,attack) { 
         // Constructor to initialize player class with given attributes/inputs
+        this.name = name;
         this.health = health;
         this.strength = strength;
         this.attack = attack;

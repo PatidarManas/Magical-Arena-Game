@@ -32,7 +32,6 @@ function fightSimulator(playerA,playerB) {
         console.log(`Game Ended: ${defenderPlayer.name} Won and ${attackerPlayer.name} Lost`)
     }else{
         console.log(`Game Ended: ${attackerPlayer.name} Won and ${defenderPlayer.name} Lost`)
-
     }
 
 }

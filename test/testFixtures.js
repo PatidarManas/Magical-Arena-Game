@@ -14,5 +14,6 @@ export const playerClassFixture = {
     negativeAttackPlayer: () => new Player("NegativeAttackPlayer", 50, 5, -10),
     negativeStrengthPlayer: () =>
       new Player("NegativeStrengthPlayer", 50, -5, 10),
+    invalidDamage: -10
   },
 };

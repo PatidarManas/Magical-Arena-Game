@@ -21,19 +21,19 @@ class Player {
 
   rollDice() {
     // Function to give random value between 1 and 6, both inclusive
-    var diceValue = Math.floor(Math.random() * 6) + 1;
+    let diceValue = Math.floor(Math.random() * 6) + 1;
     return diceValue;
   }
 
   attackImpact() {
     // Function to calculate the attack impact based on attack attribute and a dice roll
-    var attackImpactValue = this.attack * this.rollDice();
+    let attackImpactValue = this.attack * this.rollDice();
     return attackImpactValue;
   }
 
   defendImpact() {
     // Function to calculate the defend impact based on strength attribute and a dice roll
-    var defendImpactValue = this.strength * this.rollDice();
+    let defendImpactValue = this.strength * this.rollDice();
     return defendImpactValue;
   }
 

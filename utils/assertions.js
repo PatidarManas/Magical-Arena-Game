@@ -13,6 +13,15 @@ export function isEqual(actual, expected, message) {
     }
 }
 
+export function isEqualObjects(actual, expected, message) {
+    const actualStr = JSON.stringify(actual);
+    const expectedStr = JSON.stringify(expected);
+
+    if (actualStr !== expectedStr) {
+        throw new Error(`Test Failed: ${message}, Actual: ${actualStr}, Expected: ${expectedStr}`);
+    }
+}
+
 export function isInRange(value, min, max, message) {
     if(value < min || value > max){
         throw new Error(`Test Failed: ${message},Value: ${value} not in range [${min}, ${max}]`);

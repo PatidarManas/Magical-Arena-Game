@@ -7,7 +7,7 @@ function fightSimulator(playerA,playerB) {
 
     // assigning attacker to the one with less energy and defender to the other
     // /*Note*/ -> Assumption: it is assumed in case of equal health of A and B, strength and then attack will be considered to pull out a decision
-    const { attackerPlayer, defenderPlayer } = decideAttackerAndDefender(playerA, playerB);
+    let { attackerPlayer, defenderPlayer } = decideAttackerAndDefender(playerA, playerB);
 
     // Run the fight untill both are alive
     while(attackerPlayer.isAlive() && defenderPlayer.isAlive()){
@@ -20,7 +20,7 @@ function fightSimulator(playerA,playerB) {
         console.log(`New Health: ${playerA.name} = ${playerA.health} \n ${playerB.name} = ${playerB.health} `)
 
         //swaping the attackplayer and the defendplayer turns
-        let tempPlayerStore = attackerPlayer;
+        const tempPlayerStore = attackerPlayer;
         attackerPlayer = defenderPlayer;
         defenderPlayer = tempPlayerStore;
 
@@ -35,7 +35,7 @@ function fightSimulator(playerA,playerB) {
 
 }
 
-function isValidPlayerObject(player) {
+export function isValidPlayerObject(player) {
     //Function to check if the player is a valid object of Player class or not
     //assumed that attack and strength of player can be zero
     return (
@@ -51,11 +51,12 @@ function isValidPlayerObject(player) {
         typeof player.attackImpact === 'function' &&
         typeof player.defendImpact === 'function' &&
         typeof player.takeDamage === 'function' &&
+        typeof player.rollDice === 'function' &&
         typeof player.isAlive === 'function' 
     )
 }
 
-function decideAttackerAndDefender(playerA, playerB) {
+export function decideAttackerAndDefender(playerA, playerB) {
     // Function to decide who will attack first from both the players at the start of the game
     // Here few assumptions are made for cases where health of both players are equal
     let attackerPlayer, defenderPlayer;

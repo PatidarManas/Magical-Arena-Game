@@ -8,7 +8,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "node test/playerModal.test.js"
+    "test": "node test/gameLogic.test.js && node test/playerModal.test.js"
   },
   "keywords": [
     "Magical",

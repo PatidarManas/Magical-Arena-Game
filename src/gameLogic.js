@@ -6,9 +6,8 @@ function fightSimulator(playerA,playerB) {
     }
 
     // assigning attacker to the one with less energy and defender to the other
-    // /*Note*/ -> Assumption: it is assumed in case of equal energy of A and B, A is attacker
-    let attackerPlayer = playerA.health <= playerB.health ? playerA : playerB;
-    let defenderPlayer = attackerPlayer === playerA ? playerB : playerA;
+    // /*Note*/ -> Assumption: it is assumed in case of equal health of A and B, strength and then attack will be considered to pull out a decision
+    const { attackerPlayer, defenderPlayer } = decideAttackerAndDefender(playerA, playerB);
 
     // Run the fight untill both are alive
     while(attackerPlayer.isAlive() && defenderPlayer.isAlive()){
@@ -54,6 +53,35 @@ function isValidPlayerObject(player) {
         typeof player.takeDamage === 'function' &&
         typeof player.isAlive === 'function' 
     )
+}
+
+function decideAttackerAndDefender(playerA, playerB) {
+    // Function to decide who will attack first from both the players at the start of the game
+    // Here few assumptions are made for cases where health of both players are equal
+    let attackerPlayer, defenderPlayer;
+
+    if (playerA.health === playerB.health && playerA.strength === playerB.strength && playerA.attack === playerB.attack) {
+        // If all attributes are equal, assign playerA as attacker (*Assumption*)
+        attackerPlayer = playerA;
+        defenderPlayer = playerB;
+    } else if (playerA.health === playerB.health) {
+        if (playerA.strength === playerB.strength) {
+            // If health and strength are the same, compare attack to decide (*Assumption*)
+            attackerPlayer = playerA.attack < playerB.attack ? playerA : playerB;
+            defenderPlayer = attackerPlayer === playerA ? playerB : playerA;
+        } else {
+            // If health is the same but strength differs, compare strength to decide (*Assumption*)
+            attackerPlayer = playerA.strength < playerB.strength ? playerA : playerB;
+            defenderPlayer = attackerPlayer === playerA ? playerB : playerA;
+        }
+    } else {
+        // Otherwise, compare health to determine attacker
+        attackerPlayer = playerA.health < playerB.health ? playerA : playerB;
+        defenderPlayer = attackerPlayer === playerA ? playerB : playerA;
+    }
+
+    
+    return { attackerPlayer, defenderPlayer };
 }
 
 export default fightSimulator;

@@ -59,7 +59,7 @@ function testPlayerTakeDamage() {
 
 function testIsAlive() {
     // Function to test isAlive function
-    console.log("Testing for isAlive Function to return Boolean as expected");
+    console.log("Testing for isAlive Function to return boolean as expected");
 
     const alivePlayer = playerClassFixture.positiveTestFixtures.validPlayerA;
     const deadPlayer = playerClassFixture.positiveTestFixtures.zeroHealthPlayer;
@@ -71,7 +71,7 @@ function testIsAlive() {
 }
 
 // Negative Test Cases
-function testNegativeHealth() {
+function testPlayerNegativeHealth() {
     //Function to test constructor in case of Negative health 
     console.log("Testing for player Initialization with negative health ");
 
@@ -82,7 +82,7 @@ function testNegativeHealth() {
     console.log('testNegativeHealth Passed.');
 }
 
-function testNegativeStrength() {
+function testPlayerNegativeStrength() {
     //Function to test constructor in case of Negative strength 
     console.log("Testing for player Initialization with negative strength ");
 
@@ -93,7 +93,7 @@ function testNegativeStrength() {
     console.log('testNegativeStrength Passed.');
 }
 
-function testNegativeAttack() {
+function testPlayerNegativeAttack() {
     //Function to test constructor in case of Negative attack 
     console.log("Testing for player Initialization with negative attack ");
 
@@ -104,7 +104,7 @@ function testNegativeAttack() {
     console.log('testNegativeAttack Passed.');
 }
 
-function testNegativeTakeDamage() {
+function testPlayerNegativeTakeDamage() {
     // Function to test takeDamage function with invalid damage
     console.log("Testing for takeDamage Function with negative value");
 
@@ -123,10 +123,10 @@ function runTestFunctions() {
     testDiceRoll();
     testPlayerTakeDamage();
     testIsAlive();
-    testNegativeAttack();
-    testNegativeHealth();
-    testNegativeStrength();
-    testNegativeTakeDamage();
+    testPlayerNegativeAttack();
+    testPlayerNegativeHealth();
+    testPlayerNegativeStrength();
+    testPlayerNegativeTakeDamage();
     console.log("\n All test cases Passed for Player Class");
 }
 

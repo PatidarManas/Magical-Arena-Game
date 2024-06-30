@@ -123,9 +123,9 @@ function runTestFunctions() {
     testDiceRoll();
     testPlayerTakeDamage();
     testIsAlive();
-    testPlayerNegativeAttack();
     testPlayerNegativeHealth();
     testPlayerNegativeStrength();
+    testPlayerNegativeAttack();
     testPlayerNegativeTakeDamage();
     console.log("\n All test cases Passed for Player Class");
 }

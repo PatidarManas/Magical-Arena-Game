@@ -35,32 +35,12 @@ function fightSimulator(playerA,playerB) {
 
 }
 
-export function isValidPlayerObject(player) {
-    //Function to check if the player is a valid object of Player class or not
-    //assumed that attack and strength of player can be zero
-    return (
-        player != null &&
-        typeof player === 'object' &&
-        typeof player.name === 'string' &&
-        typeof player.health === 'number' &&
-        player.health >= 0 &&
-        typeof player.attack === 'number' &&
-        player.attack >= 0 && 
-        typeof player.strength === 'number' &&
-        player.strength >= 0 &&
-        typeof player.attackImpact === 'function' &&
-        typeof player.defendImpact === 'function' &&
-        typeof player.takeDamage === 'function' &&
-        typeof player.rollDice === 'function' &&
-        typeof player.isAlive === 'function' 
-    )
-}
 
 export function decideAttackerAndDefender(playerA, playerB) {
     // Function to decide who will attack first from both the players at the start of the game
     // Here few assumptions are made for cases where health of both players are equal
     let attackerPlayer, defenderPlayer;
-
+    
     if (playerA.health === playerB.health && playerA.strength === playerB.strength && playerA.attack === playerB.attack) {
         // If all attributes are equal, assign playerA as attacker (*Assumption*)
         attackerPlayer = playerA;
@@ -86,3 +66,23 @@ export function decideAttackerAndDefender(playerA, playerB) {
 }
 
 export default fightSimulator;
+export function isValidPlayerObject(player) {
+    //Function to check if the player is a valid object of Player class or not
+    //assumed that attack and strength of player can be zero
+    return (
+        player != null &&
+        typeof player === 'object' &&
+        typeof player.name === 'string' &&
+        typeof player.health === 'number' &&
+        player.health >= 0 &&
+        typeof player.attack === 'number' &&
+        player.attack >= 0 && 
+        typeof player.strength === 'number' &&
+        player.strength >= 0 &&
+        typeof player.attackImpact === 'function' &&
+        typeof player.defendImpact === 'function' &&
+        typeof player.takeDamage === 'function' &&
+        typeof player.rollDice === 'function' &&
+        typeof player.isAlive === 'function' 
+    )
+}

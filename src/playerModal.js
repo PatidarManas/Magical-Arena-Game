@@ -19,22 +19,27 @@ class Player {
     this.attack = attack;
   }
 
-  rollDice() {
-    // Function to give random value between 1 and 6, both inclusive
-    let diceValue = Math.floor(Math.random() * 6) + 1;
-    return diceValue;
-  }
-
   attackImpact() {
     // Function to calculate the attack impact based on attack attribute and a dice roll
     let attackImpactValue = this.attack * this.rollDice();
     return attackImpactValue;
   }
-
+  
   defendImpact() {
     // Function to calculate the defend impact based on strength attribute and a dice roll
     let defendImpactValue = this.strength * this.rollDice();
     return defendImpactValue;
+  }
+  
+  isAlive() {
+    //Function to check if player is alive (health > 0), return true else false
+    return this.health > 0;
+  }
+
+  rollDice() {
+    // Function to give random value between 1 and 6, both inclusive
+    let diceValue = Math.floor(Math.random() * 6) + 1;
+    return diceValue;
   }
 
   takeDamage(damageProvided) {
@@ -48,10 +53,6 @@ class Player {
       this.health > damageProvided ? this.health - damageProvided : 0;
   }
 
-  isAlive() {
-    //Function to check if player is alive (health > 0), return true else false
-    return this.health > 0;
-  }
 }
 
 export default Player;

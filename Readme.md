@@ -16,6 +16,9 @@ Email: manaspatidar170@gmail.com
 
 ### Step 2 : Unzip the file and open the Magical Arena Game Directory under terminal
 
+### Step 3 : run install command
+```npm install```
+
 ### Step 3 : Change Player Attributes
  To change player inputs, navigate to `index.js`. You can modify the following attributes for `playerA` and `playerB`:
  - Name

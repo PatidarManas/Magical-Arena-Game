@@ -65,7 +65,6 @@ export function decideAttackerAndDefender(playerA, playerB) {
     return { attackerPlayer, defenderPlayer };
 }
 
-export default fightSimulator;
 export function isValidPlayerObject(player) {
     //Function to check if the player is a valid object of Player class or not
     //assumed that attack and strength of player can be zero
@@ -86,3 +85,5 @@ export function isValidPlayerObject(player) {
         typeof player.isAlive === 'function' 
     )
 }
+
+export default fightSimulator;
